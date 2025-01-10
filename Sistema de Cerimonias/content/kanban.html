@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/CaixaLogo.png">
+    <link rel="stylesheet" href="../style/style_kanban.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Site de Cerimônias da Arrecadação - SICA</title>
+</head>
+
+<body>
+    <header class="header-items">
+        <div>
+            <img src="../img/CaixaLogo.png">
+        </div>
+        <div>
+            <h1 class="h1-header"> RETROSPECTIVA CAIXA </h1>
+        </div>
+        <div>
+            <a href="../index.html">HOME</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+
+            <div class="linha-quadro">
+
+                <div class="row esquerda">
+
+                    <div class="col-3 div_button">
+    
+                        <button class="botao" type="button"><i class="fa fa-plus-circle"></i> Adicionar Cartão</button>
+    
+                    </div>
+    
+                    <div id="espera"></div>
+    
+                </div>
+    
+                <div class="col-9 kanban">
+    
+                    <div class="titulos">
+    
+                        <div class="titulo">
+                            <h2 class="texto_titulo">Deu Certo</h2>
+                        </div>
+    
+                        <div class="titulo">
+                            <h2 class="texto_titulo">Não Deu Certo</h2>
+                        </div>
+    
+                        <div class="titulo">
+                            <h2 class="texto_titulo">Novas Ideias</h2>
+                        </div>
+                    </div>
+    
+                    <div class="colunas">
+    
+                        <div class="column" id="column1"></div>
+    
+                        <div class="column" id="column2"></div>
+    
+                        <div class="column" id="column3"></div>
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+            <div class="persistencia">
+                <div class="interacoes-salvar">
+                    <button class="salvar" onclick="salvarNoLocalStorage()"><i class="fa fa-save"></i> salvar</button>
+                    <div class="loader"></div>
+                    <div class="check"></div>
+                </div>
+                <button class="print" onclick="salvarTela()"><i class="	fa fa-print"></i> Salvar Imagem</button>
+                <button class="limpar" onclick="limparDados()"><i class="fa fa-trash-o"></i> limpar dados</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
+<script src="../java_script/script_kanban.js"></script>

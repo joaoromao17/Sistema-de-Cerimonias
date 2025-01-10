@@ -1,0 +1,312 @@
+/* configurações das variaveis das cores padrão do site */
+:root{
+    --a-visited: white;
+    --cabecalho: rgb(72, 136, 196);
+    --texto-claro: white;
+    --sombra: rgba(0, 0, 0, 0.308);
+    --a-hover:rgb(177, 179, 182);
+    --menu-bar-div: #fe8431;
+    --theme: cadetblue;
+    --scroll-bar: gray;
+    --botao: cadetblue;
+    --extra: rgb(72, 136, 196);
+    --hover-botao: rgb(50, 118, 121);
+    --nav-bar:rgb(72, 136, 196);
+    --nav-items-ul-li: #0074cc;
+    --nav-items-ul-li-hover: #005799;
+    --nav-items-ul-li-hover-border: #fe8431;
+    --dropdown: #fe8431;
+    --btn: #3e5a74;
+    --information-stats:#0074cc;
+    --pressed: rgb(40, 92, 95);
+    --fundo-pagina: rgb(228, 224, 224);
+    --hover-cabecalho: rgb(177, 179, 182);
+    --cartao: rgb(230, 255, 69);
+    --hover-cartao: rgb(173, 199, 2);
+    --inside-card: rgba(253, 143, 40, 0.829);
+    --inside-card-hover: rgba(255, 136, 0, 0.993);
+    --inside-card-pressed: rgba(211, 113, 1, 0.993);
+    --check-color: #4CAF50;
+}
+
+/*configurações para o layout total*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    font-size: 1.2rem;
+}
+.container{
+    display: block;
+}
+body{
+    background-color: var(--fundo-pagina);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+header {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    box-shadow: 0 0 5px 0 var(--sombra);
+    background-color: var(--cabecalho);
+}
+.h1-header {
+    font-size: 1.4em;
+    color: var(--texto-claro);
+}
+.a-header {
+    font-size: 0.7em; 
+    color: var(--texto-claro);
+    text-decoration:none;
+    font-weight: bold;
+}
+.a-header:hover {
+    color: var(--hover-cabecalho);
+}
+
+/*configurações para a */
+ul,
+li {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+a, a:visited, a:active{
+	text-decoration:none;
+	color: white;
+}
+
+#menu_bar{
+    z-index: 999;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: all 1.5s;
+}
+#menu_bar div {
+    margin: 2px;
+    animation: all 3s;
+    background: #fe8431;
+    height: 7px;
+    border-radius: 13px;
+    width: 35px;
+    transition: all 0.5s;
+}
+#menu_bar.active{
+    transition: all 1s;
+    left: 300px;
+}
+#menu_bar.active div:nth-child(1) {
+    transform: rotate(45deg) translate(1px, 9px);
+    transition: all 0.5s;
+}
+#menu_bar.active div:nth-child(2) {
+    transform: rotate(135deg) translate(2px, 5px);
+    transition: all 0.5s;
+}
+#menu_bar.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-12px, -4px);
+    transition: all 0.5s;
+}
+
+nav {
+    height: 100%;
+    width: 170px;
+    position: fixed;
+}
+#nav_bar {
+    transition: all 1s ease-in;
+    opacity: 0;
+    height: 100%;
+    background-color: rgb(72, 136, 196);
+    width: 300px;
+}
+#nav_bar *{
+    font-size: +22px;
+}
+#nav_bar.show {
+    display: block;
+    transition: 1s;
+    opacity: 1;
+    animation-name: openMenu;
+    animation-duration: 1s;
+}
+#nav_bar.hide{
+    width: 0;
+}
+#nav_bar.hide .nav_items .sub-item{
+    display: none;  
+}
+#nav_bar span {
+    transition: all 1s ease-in;
+    animation-name: openMenuSpan;
+    transform: translateX(30px);
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+.nav_items {
+    height: 60%;
+    width: 100%;
+}
+.nav_items ul li {
+    cursor: pointer;
+    margin-right: 50px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    list-style: none;
+    background-color: #005799;
+    color: white;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+    box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 10px;
+    bottom: 10px;
+}
+.nav_items ul li:hover {
+    background-color: #005799;
+    border-left: 4px solid #fe8431;
+}
+.nav_items ul .sub-item{
+    position: absolute;
+    display: none;
+    left: 178%;
+    margin: 0;
+}
+.nav_items ul .sub-item li{
+    margin: 5px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.information_stats {
+    height: 9%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-top: solid 2px var(--information-stats);
+    color: white;
+    padding-top: 5px;
+}
+
+.dropdown{
+    background-color: none;
+    border: 2px solid #fe8431;
+    border-radius: 5px;
+    color: #3e5a74;
+}
+
+.btn{
+    padding: 15px 80px;
+    color: #3e5a74;
+    font-weight: bolder;
+    font-size: 18px;
+    border: none;
+}
+
+.dropdown-menu{
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10px 10px;
+}
+
+.dropdown-item:hover{
+    border-radius: 5px;
+    opacity: 90%;
+}
+
+
+/*configurações para a pagina*/
+
+section.sobre {
+    height: calc(100% - 100px);
+}
+
+.extra {
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 850px;
+    height: 750px;
+    border-radius: 50%;
+    background-color: var(--extra);
+    z-index: -1;
+}
+
+.texto-sobre {
+    margin-top: 3%;
+    margin-left: 13%;
+    z-index: 1;
+}
+
+.texto-sobre h1 {
+    font-size: 2em;
+    margin-left: 12%;
+    text-align: justify;
+    width: 500px;
+    background-color: var(--fundo-pagina);
+}
+
+.texto-sobre p{
+    margin-left: 7%;
+    font-size: 0.9em;
+    text-align: justify;
+    width: 500px;
+    background-color: var(--fundo-pagina);
+}
+
+.texto-sobre button {
+    border: 0;
+    background-color: rgb(72, 136, 196);
+    color: white;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 300px;
+    width: 140px;
+    height: 60px;
+    font-size: 1.5em;
+}
+
+.texto-sobre button:hover {
+    background-color: #a1a4a7;
+}
+
+
+/*keyframes*/
+@keyframes openMenu {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 300px;
+    }
+}
+@keyframes openMenuSpan {
+    to {
+        transform: translateX(-10px);
+    }
+    from {
+        transform: translateX(30px);
+    }
+}

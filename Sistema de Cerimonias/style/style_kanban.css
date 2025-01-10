@@ -1,0 +1,330 @@
+/* configurações das variaveis das cores padrão do site */
+:root{
+    --cabecalho: rgb(72, 136, 196);
+    --texto-claro: white;
+    --sombra: rgba(0, 0, 0, 0.308);
+    --theme: cadetblue;
+    --scroll-bar: gray;
+    --botao: cadetblue;
+    --hover-botao: rgb(50, 118, 121);
+    --pressed: rgb(40, 92, 95);
+    --fundo-pagina: rgb(228, 224, 224);
+    --hover-cabecalho: rgb(177, 179, 182);
+    --cartao: rgb(230, 255, 69);
+    --hover-cartao: rgb(173, 199, 2);
+    --inside-card: rgba(253, 143, 40, 0.829);
+    --inside-card-hover: rgba(255, 136, 0, 0.993);
+    --inside-card-pressed: rgba(211, 113, 1, 0.993);
+    --check-color: #4CAF50;
+}
+/*configurações para o layout total*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+    font-size: 1.2rem;
+}
+.container{
+    display: block;
+}
+body{
+    background-color: var(--fundo-pagina);
+}
+header {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    box-shadow: 0 0 5px 0 var(--sombra);
+    background-color: var(--cabecalho);
+}
+.h1-header {
+    font-size: 1.4em;
+    color: var(--texto-claro);
+}
+a {
+    font-size: 0.7em; 
+    color: var(--texto-claro);
+    text-decoration:none;
+    font-weight: bold;
+}
+a:hover {
+    color: var(--hover-cabecalho);
+}
+
+.linha-quadro{
+    display: flex;
+}
+
+/*configurações para a parte das colunas*/
+/* ================================================= */
+.kanban{
+    display: block;
+    width: 70vw;
+    justify-content: center;
+    min-height: 200px;
+    gap: 10px;
+    padding: 10px;
+}
+.titulos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+.titulo{
+    text-align: center;
+    min-width: 20vw;
+    background-color: var(--theme);
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 2px var(--sombra);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.texto_titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    border: none;
+    width: 20vw;
+    color: var(--texto-claro);
+}
+.colunas{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--theme);
+    min-width: 20vw;
+    min-height: 55vh;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 2px var(--sombra);
+}
+
+/* ================================================= */
+
+/*configurações para a parte dos cartões*/
+/* ================================================= */
+.item{
+    background-color: var(--cartao);
+    border: none;
+    padding: 10px;
+    min-height: 22vh;
+    display: grid;
+    place-items: center;
+    box-shadow: 2px 2px 2px 2px var(--sombra);
+    transition: 0.3s;
+    transition: border 0.1s;
+}
+.item:hover{
+    border: 3px solid var(--hover-cartao); 
+}
+.dragging{
+    opacity: 0.5;
+}
+.texto_card{
+    background-color: var(--cartao);
+    border: none;
+    font-size: 1em;
+    width: 16vw;
+    resize: vertical;
+    margin-bottom: 10px;
+}
+.texto_card:focus{
+    outline: none;
+}
+/* ================================================= */
+
+/*scrool bar do cartão*/
+/* ================================================= */
+.texto_card::-webkit-scrollbar{
+    background-color: var(--cartao);
+}
+.texto_card::-webkit-scrollbar-thumb{
+    background-color: var(--inside-card);
+}
+.texto_card::-webkit-scrollbar-corner{
+    background-color: var(--cartao);
+}
+/* ================================================= */
+
+/*botão like e apagar*/
+/* ================================================= */
+.btns-card{
+    display: flex;
+    gap: 30px;
+}
+.like{
+    height: 5vh;
+    width: 5vw;
+    font-size: 1em;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: var(--inside-card);
+    transition: 0.2s;
+    transition: border 0.1s;
+}
+.apagar{
+    height: 5vh;
+    width: 3.5vw;
+    display: flex;
+    border: none;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--inside-card);
+    transition: 0.2s;
+    transition: border 0.1s;
+}
+.like:hover, .apagar:hover{
+    background: var(--inside-card-hover);
+}
+.like > i, .apagar > i{
+    padding: 5px;
+    font-size: 1em;
+}
+.like:active, .apagar:active{
+    background-color: var(--inside-card-pressed);
+    box-shadow: inset -2px -2px 2px 2px var(--sombra);
+}
+/* ================================================= */
+
+/*lado esquerdo de criação de novos cartões*/
+/* ================================================= */
+/* botão de criação de cartão */
+/* ------------------------------------------------- */
+.botao{
+    gap: 10px;
+    border-radius: 15px;
+    background-color: var(--botao);
+    color: white;
+    font-size: 1em;
+    border: none;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px var(--sombra);
+    transition: 0.3s;
+}
+.botao:hover{
+    background-color: var(--hover-botao);
+}
+.botao:active{
+    background-color: var(--pressed);
+    box-shadow: inset -2px -2px 2px 2px var(--sombra);
+}
+/* ------------------------------------------------- */
+
+/* lado de criação dos cartões */
+.esquerda{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+}
+/* div onde fica o botão de criar novo cartão */
+.div_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* lugar onde fica os cartões quando são criados */
+#espera{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+/* ================================================= */
+
+/* configurações de botão de salvar e limpar informações */
+/* ============================================= */
+.persistencia{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+    height: 18vh;
+}
+.interacoes-salvar{
+    display: flex;
+    align-items: center;
+}
+.salvar, .limpar, .print{
+    gap: 10px;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    width: 14vw;
+    height: 100%;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--botao);
+    box-shadow: 2px 2px 2px 2px var(--sombra);
+    color: var(--texto-claro);
+    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.salvar:hover, .limpar:hover, .print:hover{
+    background-color: var(--hover-botao);
+}
+.salvar:active, .limpar:active, .print:active{
+    background-color: var(--pressed);
+    box-shadow: inset -2px -2px 2px 2px var(--sombra);
+}
+/* ============================================= */
+
+/* configurações do loader + animação */
+/* ============================================= */
+.loader{
+    margin-left: 4vw;
+    border: 5px solid var(--fundo-pagina);
+    border-top: 5px solid var(--theme);
+    border-radius: 50%;
+    width: 3vw;
+    height: 6.1vh;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* ============================================= */
+
+/* configurações do check + animação*/
+/* ============================================= */
+.check{
+    width: 2vw;
+    height: 2vh;
+    margin-bottom: 3vh;
+    margin-left: 4vw;
+    border: 4px solid var(--check-color);
+    border-top: none;
+    border-right: none;
+    transform-origin: 100%;
+    animation: drawCheck 1s ease-in-out forwards;
+    display: none;
+}
+@keyframes drawCheck {
+    0% { transform: scale(0) rotate(315deg); }
+    100% { transform: scale(1) rotate(315deg); }
+}
+/* ============================================= */
